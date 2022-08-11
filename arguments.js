@@ -1,6 +1,8 @@
-function add(num1, num2){
-    console.log(num1, num2);
-    console.log(arguments[4]);
-}
+/* --------------------------------------------------------------------- */
+/*             how a function takes an argument, and returns             */
+/* --------------------------------------------------------------------- */
 
-add(12, 13, 45, 89, 78);
+const testFunction = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+};
+console.log(testFunction(23,34)));
