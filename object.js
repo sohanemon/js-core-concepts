@@ -1,27 +1,19 @@
-const nayok = {
-    name: 'Sakib Khan',
-    id: 121,
-    address: 'movie cinema',
-    isSingle: true,
-    friends: ['Apu', 'Raaz', 'Salman', 'aamir'],
-    movies: [{name: 'no. 1', year: 2015}, {name: 'king khan', year: 2018}],
-    act: function(){
-        console.log('acting like Sakib khan');
-    },
-    car: {
-        brand: 'tesla',
-        price: 50000000,
-        made: 2025,
-        manufacturer: {
-            name: 'tesla',
-            ceo: 'Elon Mask',
-            country: 'USA'
-        }
-    }
-}
+/* --------------------------------------------------------------------- */
+/*                            rock with Object                           */
+/* --------------------------------------------------------------------- */
 
-// console.log(student.car);
-console.log(nayok.act);
-nayok.act();
+/* ------------------------- object declaration ------------------------ */
+var object = {
+  name: "South Hall",
+  seat: 160,
+  cost: 3000,
+  available: true,
+  color: "white",
+  visit: (object) => {
+    console.log("hi, i am south hall");
+    return { ...object };
+  },
+};
 
-
+console.log(object);
+console.log(object.visit(object));

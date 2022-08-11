@@ -5,4 +5,4 @@
 const testFunction = (...args) => {
   return args.reduce((a, b) => a + b, 0);
 };
-console.log(testFunction(23,34)));
+console.log(testFunction(23, 34));
