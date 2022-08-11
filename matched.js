@@ -1,39 +1,32 @@
-const numbers = [45, 65, 23, 98, 19];
+/* --------------------------------------------------------------------- */
+/*              finding some data using javascript functions             */
+/* --------------------------------------------------------------------- */
 
-// for(let i = 0; i < numbers.length; i++){
-//     const number = numbers[i];
-//     console.log(number);
-// }
-
-for(const number of numbers){
-    // console.log(number)
-}
-
-const products = [
-    {id: 1, name: 'xiami phone One night', price: 19000},
-    {id: 2, name: 'iphone', price: 19000},
-    {id: 3, name: 'mac book air', price: 119000},
-    {id: 4, name: 'lenovo yoga laptop 2025', price: 19000},
-    {id: 5, name: 'Dell inspiron laptop', price: 19000},
-    {id: 6, name: 'Samsung Phone note 7', price: 19000},
-    {id: 7, name: 'Nokia old age Phone gone', price: 19000},
-    {id: 8, name: 'Phone one', price: 19000},
-    {id: 8, name: 'M1 chip not cheap LapTOP', price: 19000},
+const data = [
+  "includes may work here",
+  { id: 1, name: "John" },
+  { id: 2, name: "Jane" },
+  { id: 3, name: "Doe" },
+  { id: 4, name: "Bob" },
+  { id: 5, name: "Bob" },
 ];
 
-// for(const product of products){
-//     console.log(product);
-// }
+const isPersonThere = (data, name) => {
+  const matches = data.filter(
+    (e) => e.name?.toLowerCase() === name.toLowerCase()
+    /* ----------------- note: question mark is important. ----------------- */
+    /**
+     * .toLoweCase function may not show because it can't guess the string
+     * name isn't loaded in the map function
+     * ? optional keyword determines whether the function is loaded or not
+     * if the function is not loaded then the function may not be called
+     */
+  );
 
-function matchedProducts (products, search){
-    const matched = [];
-    for(const product of products){
-        if(product.name.toLowerCase().includes(search.toLowerCase())){
-            matched.push(product);
-        }
-    }
-    return matched;
-}
-
-const result = matchedProducts(products, 'laptop');
-console.log(result);
+  matches.length > 0 && console.log("\nId\t\t\t Name\n");
+  matches.length > 0 &&
+    matches.forEach((e) => {
+      console.log(e.id, "\t\t\t", e.name, "\n");
+    });
+};
+console.log(isPersonThere(data, "bob"));
